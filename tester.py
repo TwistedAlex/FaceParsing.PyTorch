@@ -90,7 +90,8 @@ class Tester(object):
                 pred = outputs.data.max(1)[1].cpu().numpy()  # Matrix index
                 gt = labels.cpu().numpy()
                 metrics.update(gt, pred)
-
+            print(pred.shape)
+            print(type(pred))
             torch.cuda.synchronize()
             time_meter.update(time.perf_counter() - tic)
 
